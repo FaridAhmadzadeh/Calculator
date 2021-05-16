@@ -1,0 +1,163 @@
+<MyButton@Button>:
+    font_size: 40
+    background_color: .7,.7,.7,1
+
+<BoxLayout>:
+    spacing:10
+
+<Calc>:
+    id:Calc
+    display:input
+    buttons:[topButton,middleButton,downButtons,button4,button5,button6,buttonPl,cosButton]
+    rows: 5
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        TextInput:
+            id:input
+            font_size: 40
+            background_color:1,1,1,1
+            multiline: False
+
+    BoxLayout:
+        id:topButton
+        MyButton:
+            background_normal:'./Buttons/lftperant.png'
+            background_disabled_normal:'./Buttons/prslftperant.png'
+            background_down: './Buttons/prslftperant.png'
+            on_press: input.text+='('
+        MyButton:
+            background_normal:'./Buttons/rghtperant.png'
+            background_disabled_normal:'./Buttons/prsrghtperant.png'
+            background_down: './Buttons/prsrghtperant.png'
+            on_press: input.text+=')'
+        MyButton:
+            background_normal:'./Buttons/facto.png'
+            background_disabled_normal:'./Buttons/prsfact.png'
+            background_down: './Buttons/prsfact.png'
+            on_press: Calc.factoriel(input.text)
+        MyButton:
+            background_normal:'./Buttons/multiple.png'
+            background_disabled_normal:'./Buttons/prsmulti.png'
+            background_down: './Buttons/prsmulti.png'
+            on_press: input.text+='*'
+        MyButton:
+            background_normal:'./Buttons/rootsign.png'
+            background_disabled_normal:'./Buttons/prsrootsign.png'
+            background_down: './Buttons/prsrootsign.png'
+            on_press: Calc.number_root(input.text)
+        MyButton:
+            background_normal:'./Buttons/tan.png'
+            background_disabled_normal:'./Buttons/prstan.png'
+            background_down: './Buttons/prstan.png'
+            on_press: Calc.tan_x(input.text)
+        
+
+    
+    BoxLayout:
+        id:middleButton
+        MyButton:
+            background_normal:'./Buttons/number7.png'
+            background_disabled_normal:'./Buttons/prsnumber7.png'
+            background_down: './Buttons/prsnumber7.png'
+            on_press: input.text+='7'
+        MyButton:
+            background_normal:'./Buttons/number8.png'
+            background_disabled_normal:'./Buttons/prsnumber8.png'
+            background_down: './Buttons/prsnumber8.png'
+            on_press: input.text+='8'
+        MyButton:
+            background_normal:'./Buttons/number9.png'
+            background_disabled_normal:'./Buttons/prsnumber9.png'
+            background_down: './Buttons/prsnumber9.png'
+            on_press: input.text+='9'
+        MyButton:
+            background_normal:'./Buttons/minus.png'
+            background_disabled_normal:'./Buttons/prsminus.png'
+            background_down: './Buttons/prsminus.png'
+            on_press: input.text+='-'
+        MyButton:
+            background_normal:'./Buttons/devide.png'
+            background_disabled_normal:'./Buttons/prsdevide.png'
+            background_down: './Buttons/prsdevide.png'
+            on_press: input.text+='/'
+        MyButton:
+            background_normal:'./Buttons/sin.png'
+            background_disabled_normal:'./Buttons/prssin.png'
+            background_down: './Buttons/prssin.png'
+            on_press: Calc.sin_x(input.text)
+    
+    BoxLayout:
+        MyButton:
+            id:button4
+            background_normal:'./Buttons/number4.png'
+            background_disabled_normal:'./Buttons/prsnumber4.png'
+            background_down: './Buttons/prsnumber4.png'
+            on_press: input.text+='4'
+        MyButton:
+            id:button5
+            background_normal:'./Buttons/number5.png'
+            background_disabled_normal:'./Buttons/prsnumber5.png'
+            background_down: './Buttons/prsnumber5.png'
+            on_press: input.text+='5'
+        MyButton:
+            id:button6
+            background_normal:'./Buttons/number6.png'
+            background_disabled_normal:'./Buttons/prsnumber6.png'
+            background_down: './Buttons/prsnumber6.png'
+            on_press: input.text+='6'
+        MyButton:
+            id:buttonPl
+            background_normal:'./Buttons/plus.png'
+            background_disabled_normal:'./Buttons/prsplus.png'
+            background_down: './Buttons/prsplus.png'
+            on_press: input.text+='+'
+        MyButton:
+            background_normal:'./Buttons/clear.png'
+            background_disabled_normal:'./Buttons/prsclear.png'
+            background_down: './Buttons/prsclear.png'
+            on_press: input.text=''
+            on_release: Calc.clear_behv()
+        MyButton:
+            id:cosButton
+            background_normal:'./Buttons/cos.png'
+            background_disabled_normal:'./Buttons/prscos.png'
+            background_down: './Buttons/prscos.png'
+            on_press: Calc.cos_x(input.text)  
+        
+
+    BoxLayout:
+        id:downButtons
+        MyButton:
+            background_normal:'./Buttons/number1.png'
+            background_disabled_normal:'./Buttons/prsnumber1.png'
+            background_down: './Buttons/prsnumber1.png'
+            on_press: input.text+='1'
+        MyButton:
+            background_normal:'./Buttons/number2.png'
+            background_disabled_normal:'./Buttons/prsnumber2.png'
+            background_down: './Buttons/prsnumber2.png'
+            on_press: input.text+='2'
+        MyButton:
+            background_normal:'./Buttons/number3.png'
+            background_disabled_normal:'./Buttons/prsnumber3.png'
+            background_down: './Buttons/prsnumber3.png'
+            on_press: input.text+='3'
+        MyButton:
+            background_normal:'./Buttons/number0.png'
+            background_disabled_normal:'./Buttons/prsnumber0.png'
+            background_down: './Buttons/prsnumber0.png'
+            on_press: input.text+='0'
+        MyButton:
+            background_normal:'./Buttons/equal.png'
+            background_disabled_normal:'./Buttons/prsequal.png'
+            background_down: './Buttons/prsequal.png'
+            on_press: Calc.cal(input.text)
+        MyButton:
+            background_normal:'./Buttons/log.png'
+            background_disabled_normal:'./Buttons/prslog.png'
+            background_down: './Buttons/prslog.png'
+            on_press: Calc.log_x(input.text)
+        
+        
